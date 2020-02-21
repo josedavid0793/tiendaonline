@@ -5,11 +5,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="estilo.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
 <!--https://material.io/resources/icons/?search=phone&icon=local_phone&style=outline-->
 <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="estilo.css">
-<title>Hello, world!</title>
+
+<title>Formularios</title>
 
 
 </head>
@@ -91,20 +92,29 @@
                         <label class="label-float mtm mlm">Tipo:</label>
 
                         <div class="label-float div-70">
-                           <select name="tipodocumento" class="select-td">
-                          <?php
-
-                              include 'conexiondb.php';
+                           <?php
+                               include 'conexiondb.php';
                                $consulta = ("SELECT * FROM tipo_documento");
                                $res_consulta = $con->query($consulta);
+                           ?>
+
+                           <select name="tipodocumento" class="select-td">
+
+                          <?php
+
+                              
                                while($option =$res_consulta->fecth_array())
                                {
-
+              
                            ?>
-                           <option value=""><?php echo $option['codigo_tp']; ?></option>
-                            <?php
-                                }
-                                ?>
+                             <option value="<?php echo $option['codigo_tp']?>"><?php echo $option['codigo_tp'];?>
+                             </option>
+                           <?php
+
+                                   }
+                           ?>
+
+                        
                             </select>
                         </div>
                   </div>
