@@ -19,7 +19,7 @@
     <div class="row">
         <div class="col-sm-6 col-md-6 registro">
         
-        <form id="formulario-online" method="post" action="registro.php" target="_black">
+        <form name="formulario1" id="formulario-online" method="post" action="registro.php" target="_black">
             <h2 class="titulo-registro brb">Nuevos Clientes</h2>
             <p class="pto">Bienvenido a tiendaonline Colombia. Registrate y sé parte de nuestra tienda de moda online.</p>
             <div class="div_form">
@@ -99,11 +99,11 @@
                            ?>
 
                            <select name="tipodocumento" class="select-td">
-
+                                <option value="0" selected="" disabled="">Seleccione:</option>
                           <?php
 
                               
-                               while($option =$res_consulta->fecth_array())
+                               while($option =$res_consulta->fetch_array())
                                {
               
                            ?>
@@ -163,7 +163,7 @@
                </label>
               </div>
               <div class="label-float input-size">
-               <input type="email" name="email" id="registro-email" placeholder="Ingrese su correo electronico" required="">
+               <input type="email" name="email" id="registro-email" placeholder="Correo electronico" required="">
               </div>
            </div>
         
@@ -196,7 +196,13 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/d7f8911c59.js"></script>
 
-<script>
+<script language="JAVASCRIPT"><!--
+function limpiar() {
+    setTimeout('document.formulario1.reset()',2000);
+    return false;
+}
+</script>
+<!--<script>
     $("#formulario-online").validate({
            rules: {
                contrasena: { 
@@ -228,7 +234,7 @@
      }
 
 });
-</script>
+</script>-->
 </body>
 
 

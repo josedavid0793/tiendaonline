@@ -34,14 +34,14 @@ echo "<br>";
 
       
       
-      $query ="INSERT INTO registro_usuario VALUES ('$email','$contrasena','$confir_contrasena','$nombres,$apellidos','$documento','$tipo_documento','$fecha_nacimiento')";
+      $query ="INSERT INTO registro_usuario VALUES ('$email','$contrasena','$confir_contrasena','$nombres','$apellidos','$documento','$tipo_documento','$fecha_nacimiento')";
       
 
           
           $resultado = $con->query($query);
           
           if(!$resultado){
-              echo("Error al guardar datos comuniquese a soporte para ser atendido");
+              echo("Error al guardar datos comuniquese a soporte para ser atendido  ". mysqli_sqlstate($con));
           }else {
                echo("Gracias por registrarte en tiendaonline");
           }
